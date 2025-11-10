@@ -7517,20 +7517,20 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Data-Description">Data Description<a class="anchor-link" href="#Data-Description">¶</a></h3><p>There were 1535 observations made in the sessions dataset meaning there was a total of 1535 sessions played.
-There are five varibles in sessions.csv:</p>
+<h3 id="Data-Description">Data Description<a class="anchor-link" href="#Data-Description">¶</a></h3><p>There were 1535 observations made in the sessions dataset meaning there were a total of 1535 sessions played.
+There are five variables in sessions.csv:</p>
 <ul>
 <li>hashedEmail: chr<ul>
-<li>Serves as a player identifyer between both datasets</li>
+<li>Serves as a player identifier between both datasets</li>
 <li>The email with the most sessions played had a total of 310 sessions</li>
 </ul>
 </li>
 <li>start_time: chr<ul>
-<li>String representaion of start time</li>
+<li>String representation of start time</li>
 </ul>
 </li>
 <li>end_time: chr<ul>
-<li>String representaion of end time</li>
+<li>String representation of end time</li>
 </ul>
 </li>
 <li>original_start_time: dbl<ul>
@@ -7543,11 +7543,11 @@ There are five varibles in sessions.csv:</p>
 </ul>
 </li>
 </ul>
-<p>There were 196 observations in the players dataset meaning there was 196 unique players.
-In players.csv there seven varibles:</p>
+<p>There were 196 observations in the players dataset meaning there were 196 unique players.
+In players.csv there seven variables:</p>
 <ul>
 <li>experience: chr<ul>
-<li>A catagorical varible denoting the experience level of the player</li>
+<li>A categorical variable denoting the experience level of the player</li>
 <li>63 players were Amateurs, 48 were Veterans, 36 were Regular, 35 were Beginners, and 14 were pros</li>
 </ul>
 </li>
@@ -7557,7 +7557,7 @@ In players.csv there seven varibles:</p>
 </ul>
 </li>
 <li>hashedEmail: chr<ul>
-<li>As previously mentioned: a unique identifyer given to each player to track sessions</li>
+<li>As previously mentioned: a unique identifier given to each player to track sessions</li>
 </ul>
 </li>
 <li>played_hours: dbl<ul>
@@ -7571,7 +7571,7 @@ In players.csv there seven varibles:</p>
 </li>
 <li>gender: chr<ul>
 <li>The players gender</li>
-<li>124 Males, 37 Females, 15 Non-Binary, 11 Perfer not to say, 6 Two-Spirited, 2 Agender, and 1 Other</li>
+<li>124 Males, 37 Females, 15 Non-Binary, 11 Prefer not to say, 6 Two-Spirited, 2 Agender, and 1 Other</li>
 </ul>
 </li>
 <li>age: dbl<ul>
@@ -7582,9 +7582,9 @@ In players.csv there seven varibles:</p>
 </ul>
 <p>I dont directly see any major issues in the data.</p>
 <ul>
-<li>The name column in players.csv is somewhat irrelavent as majority of the names are unique and that isnt representative of anything. It would be good to move the hashedEmail column to the first position in the dataset for readability.</li>
-<li>Sessions.csv also has both a string and number representation of start and end times. A better representation would be to keep the string columns for start and end, and replace the number columns with a single column representing the total session time. This makes me belive it is raw data collected from the database as the number timestamps would be what was outputted automatically, and then reformatted as a string.</li>
-<li>Im not entirley sure what the subscribe column means in players</li>
+<li>The name column in players.csv is somewhat irrelevant as the majority of the names are unique and that isn't representative of anything. It would be good to move the hashedEmail column to the first position in the dataset for readability.</li>
+<li>Sessions.csv also has both a string and number representation of start and end times. A better representation would be to keep the string columns for start and end, and replace the number columns with a single column representing the total session time. This makes me believe it is raw data collected from the database as the number timestamps would be what was outputted automatically, and then reformatted as a string.</li>
+<li>I'm not entirely sure what the subscribe column means in players</li>
 </ul>
 </div>
 </div>
@@ -7596,8 +7596,8 @@ In players.csv there seven varibles:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question">Question<a class="anchor-link" href="#Question">¶</a></h3><p>My question is: can played_hours and Age predict exerience in players.csv?
-The data is already formatted in such a way that each player (with the exception of the last row) has an experience level, an amount of hours played, and an age. This will reduce the amount of wrangling to just removing the last row as thier age is NA.</p>
+<h3 id="Question">Question<a class="anchor-link" href="#Question">¶</a></h3><p>My question is: can played_hours and Age predict experience in players.csv?
+The data is already formatted in such a way that each player (with the exception of the last row) has an experience level, an amount of hours played, and an age. This will reduce the amount of wrangling to just removing the last row as their age is NA.</p>
 </div>
 </div>
 </div>
@@ -7638,7 +7638,7 @@ The data is already formatted in such a way that each player (with the exception
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-r"><pre><span></span><span class="c1"># Minimum necassary wrangling: removing rows with NA age</span>
+<div class="highlight hl-r"><pre><span></span><span class="c1"># Minimum necessary wrangling: removing rows with NA age</span>
 <span class="n">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">players</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">players</span><span class="o">$</span><span class="n">Age</span><span class="p">),]</span>
 </pre></div>
 </div>
@@ -7653,7 +7653,7 @@ The data is already formatted in such a way that each player (with the exception
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-r"><pre><span></span><span class="c1"># Mean value for each quantitative varible in players.csv</span>
+<div class="highlight hl-r"><pre><span></span><span class="c1"># Mean value for each quantitative variable in players.csv</span>
 <span class="n">mean_vals_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">players</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">played_hours</span><span class="p">,</span><span class="w"> </span><span class="n">Age</span><span class="p">)</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">map_df</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
@@ -7689,14 +7689,14 @@ The data is already formatted in such a way that each player (with the exception
 <span class="w">    </span><span class="nf">summarise</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="n">played_hours</span><span class="p">))</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">experience</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hours</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">experience</span><span class="p">))</span><span class="o">+</span>
 <span class="w">        </span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"identity"</span><span class="p">)</span><span class="o">+</span>
-<span class="w">        </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Total Played Hours per Expeience Level"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Hours played"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Total Played Hours per Experience Level"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Hours played"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">)</span>
 
 <span class="n">experience_age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">players</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">experience</span><span class="p">)</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">summarise</span><span class="p">(</span><span class="n">Age</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Age</span><span class="p">))</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">experience</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Age</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">experience</span><span class="p">))</span><span class="o">+</span>
 <span class="w">        </span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"identity"</span><span class="p">)</span><span class="o">+</span>
-<span class="w">        </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Average Age per Expeience Level"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Average Age"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Average Age per Experience Level"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Average Age"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Experience level"</span><span class="p">)</span>
 
 <span class="n">players_experience</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">players</span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">experience</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">experience</span><span class="p">))</span><span class="o">+</span>
@@ -7721,11 +7721,11 @@ The data is already formatted in such a way that each player (with the exception
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>The distribution of player ages tells me that majority of players are younger, falling around the 16-20 mark.</li>
-<li>The distribution of hours played shows that majority of players did not play the game very much at all. I may have to account for that in the prediction</li>
+<li>The distribution of player ages tells me that the majority of players are younger, falling around the 16-20 mark.</li>
+<li>The distribution of hours played shows that the majority of players did not play the game very much at all. I may have to account for that in the prediction</li>
 <li>We see that players with the "Regular" experience level played the most</li>
 <li>The average age for each experience group falls around 20 with the exception of Pros which are around 16-17</li>
-<li>Amateurs appear much more which may skew my prediction accuracy, especially when trying to predect a Pro</li>
+<li>Amateurs appear much more which may skew my prediction accuracy, especially when trying to predict a Pro</li>
 </ul>
 </div>
 </div>
@@ -7739,10 +7739,10 @@ The data is already formatted in such a way that each player (with the exception
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Methods-and-Plan">Methods and Plan<a class="anchor-link" href="#Methods-and-Plan">¶</a></h3><p>I would use a K-Nearest-Neighbor model to predict experience level with age and hours played.</p>
 <ul>
-<li>This is the most appropreate method of prediction as we are taking two <strong>quantitative</strong> predictors (Age, and played_hours), and predicting a <strong>qualitative</strong> (experience) classification</li>
-<li>We need to assume that the data has been standardized and centered, aswell as that points with the same experience level will have similar ages and played hours</li>
-<li>I dont believe there are many weaknesses to picking KNN for this problem. The predictors potentially could not be representative of the classification, but thats not a weakness of KNN, rather the varibles themselves.</li>
-<li>I will use an initial split to split the data into training and testing sets. I will then make use of cross validation inorder to find the best K value for my KNN model. This allows me to train and test the model on all the data to find the most accurate K aswell as having a portion of data to test at the end to get my models statistics such as precision, recall, and accuracy.</li>
+<li>This is the most appropriate method of prediction as we are taking two <strong>quantitative</strong> predictors (Age, and played_hours), and predicting a <strong>qualitative</strong> (experience) classification</li>
+<li>We need to assume that the data has been standardized and centered, as well as that points with the same experience level will have similar ages and played hours</li>
+<li>I don't believe there are many weaknesses to picking KNN for this problem. The predictors potentially could not be representative of the classification, but that's not a weakness of KNN, rather the variables themselves.</li>
+<li>I will use an initial split to split the data into training and testing sets. I will then make use of cross validation in order to find the best K value for my KNN model. This allows me to train and test the model on all the data to find the most accurate K as well as having a portion of data to test at the end to get my models statistics such as precision, recall, and accuracy.</li>
 <li>Given the size of the dataset I would use 75% of the data for training and the remaining 25% for testing. I would also use five folds on the training set to pick the best K value.</li>
 </ul>
 </div>
